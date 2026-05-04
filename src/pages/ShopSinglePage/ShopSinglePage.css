@@ -1,0 +1,326 @@
+.single_product_page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* Header/Title */
+.collection_title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 40px 0;
+  text-transform: uppercase;
+}
+
+.collection_title {
+  color: #d4ff4d;
+}
+
+.highlight {
+  color: #d4ff4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Main Layout */
+.product_main_content {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+/* Gallery */
+.product_gallery {
+  flex: 1.2;
+  display: flex;
+  gap: 20px;
+}
+
+.main_image_container {
+  flex: 3;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 450px;
+}
+
+.main_image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail_list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thumb_item {
+  background: #111;
+  border-radius: 15px;
+  height: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.thumb_item.active {
+  border-color: #d4ff4d;
+}
+
+.thumb_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info Section */
+.product_details_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.detail_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail_header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0px;
+  max-width: 70%;
+}
+
+.single_price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #BAFF19;
+}
+
+.single_description {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.options_group h3 {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 10px
+}
+
+
+
+.color_options {
+  display: flex;
+  gap: 12px;
+}
+
+.color_circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color_circle.red {
+  background: #e04f54;
+}
+
+.color_circle.cyan {
+  background: #84f0eb;
+}
+
+.color_circle.purple {
+  background: #a584f0;
+}
+
+.color_circle.grey {
+  background: #555;
+}
+
+.color_circle.black {
+  background: #222;
+}
+
+.size_options {
+  display: flex;
+  gap: 10px;
+}
+
+.size_btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.size_btn.active,
+.size_btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.add_to_cart_main {
+  background: #d4ff4d;
+  color: #000;
+  border: none;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Comments Section */
+.comments_title {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.comments_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.comment_card {
+  background: #000;
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.comment_card h4 {
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #d4ff4d;
+  margin-bottom: 15px;
+}
+
+.comment_card p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .product_main_content {
+    flex-direction: column;
+  }
+
+  .comments_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product_gallery {
+    flex-direction: column-reverse;
+  }
+
+  .thumbnail_list {
+    flex-direction: row;
+  }
+
+  .comments_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ... existing styles ... */
+
+/* Active States for Options */
+.color_circle {
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.color_circle.active {
+  border-color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Comment Form Styling */
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin-bottom: 50px;
+  background: #111;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #222;
+}
+
+.comment_form input,
+.comment_form textarea {
+  background: #000;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+}
+
+.comment_form input:focus,
+.comment_form textarea:focus {
+  border-color: #d4ff4d;
+}
+
+.comment_form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.post_btn {
+  align-self: flex-start;
+  background: #d4ff4d;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.post_btn:hover {
+  background: #fff;
+}
+
+/* Layout Fixes */
+.comments_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.comment_card {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  padding: 25px;
+  border-radius: 20px;
+  transition: border-color 0.3s;
+}
+
+.comment_card:hover {
+  border-color: #333;
+}

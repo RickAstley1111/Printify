@@ -1,0 +1,157 @@
+.activities-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activities-section_title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: -2px;
+    margin: 0 0 32px;
+}
+
+.activities-section_title span:first-child {
+    color: #fff;
+}
+
+.activities-section_title span:last-child {
+    color: #baff19;
+}
+
+.activities-section_box {
+    background: #000;
+    border: 2px solid #282828;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── ROW ── */
+.activity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border: 2px solid #baff19;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 100px;
+}
+
+.activity-row_left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.activity-row_icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.activity-row_icon-box img {
+    width: 40px;
+    height: 40px;
+}
+
+.activity-row_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.activity-row_name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.activity-row_name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+}
+
+.activity-row_dot {
+    flex-shrink: 0;
+}
+
+.activity-row_time {
+    color: #b6b6b6;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+}
+
+.activity-row_item {
+    color: #b6b6b6;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+}
+
+.activity-row_right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    min-width: 220px;
+    justify-content: flex-end;
+}
+
+.activity-row_price {
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+    min-width: 90px;
+    text-align: right;
+}
+
+.activity-row_status {
+    color: #b6b6b6;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    white-space: nowrap;
+    margin: 0;
+    min-width: 100px;
+}
+
+@media (max-width: 640px) {
+    .activities-section {
+    }
+
+    .activities-section_box {
+        padding: 24px 16px;
+    }
+
+    .activities-section_title {
+        font-size: 28px;
+    }
+
+    .activity-row_price {
+        font-size: 18px;
+    }
+
+    .activity-row_name,
+    .activity-row_status {
+        font-size: 16px;
+    }
+}

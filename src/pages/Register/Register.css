@@ -1,0 +1,239 @@
+/* =========================================
+   1. GLOBAL & ANIMATION
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Every div smoothly slides up and fades in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   2. MAIN LAYOUT
+   ========================================= */
+.login-page-container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* LEFT SIDE: Form Section */
+.login-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.form-content-wrapper {
+  width: 100%;
+  max-width: 460px; /* Slightly wider for the two-column rows */
+  position: relative;
+}
+
+/* RIGHT SIDE: Background Image */
+.login-image-section {
+  flex: 1;
+  background-image: url('../../assets/image5.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Fade overlay to blend image into the black form */
+.login-image-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+/* =========================================
+   3. TYPOGRAPHY & HEADER
+   ========================================= */
+.main-title {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 800;
+}
+
+.main-title span {
+  color: #cfff3d; /* Electric Lime */
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin: 8px 0 25px 0;
+}
+
+/* =========================================
+   4. FORM ELEMENTS
+   ========================================= */
+.form-row {
+  display: flex;
+  gap: 15px; /* Gap between first/last name and password fields */
+}
+
+.input-field-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1; /* Ensures side-by-side inputs take equal space */
+}
+
+.input-field-group label {
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+}
+
+.input-field-group input, 
+.custom-select {
+  background-color: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field-group input:focus,
+.custom-select:focus {
+  border-color: #cfff3d;
+  background-color: #121212;
+  box-shadow: 0 0 10px rgba(207, 255, 61, 0.05);
+}
+
+/* Select Styling */
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cfff3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+/* Submit Button */
+.login-submit-button {
+  width: 100%;
+  background-color: #cfff3d;
+  border: none;
+  color: #000;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+}
+
+.login-submit-button:hover {
+  background-color: #b8e632;
+  transform: translateY(-2px);
+}
+
+.register-redirect-text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+.register-redirect-text a {
+  color: #cfff3d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================================
+   5. NAVIGATION
+   ========================================= */
+.back-to-home {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  top: 20px;
+  left: 20px;
+}
+
+.back-to-home:hover {
+  background-color: #cfff3d;
+  color: #000;
+  border-color: #cfff3d;
+}
+
+/* =========================================
+   6. RESPONSIVENESS (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+  /* Hide the image section */
+  .login-image-section {
+    display: none;
+  }
+
+  /* Expand form section to full width */
+  .login-form-section {
+    flex: 1;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .form-content-wrapper {
+    max-width: 100%;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  /* Stack Name and Password rows vertically on very small screens */
+  @media (max-width: 500px) {
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

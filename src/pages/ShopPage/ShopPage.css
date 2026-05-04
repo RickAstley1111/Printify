@@ -1,0 +1,263 @@
+/* --- 1. Global Setup --- */
+.shop_page_bg,
+.shop_page_bg * {
+  box-sizing: border-box;
+}
+
+.shop_page_bg {
+  background-color: #000;
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.products {
+  display: flex;
+  gap: 50px;
+  padding: 40px 0;
+  width: 100%;
+  align-items: flex-start;
+  /* Keeps sidebar aligned to top */
+}
+
+/* --- 2. Sidebar Filters (Desktop Sticky) --- */
+.products_left {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.products_filter_title h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.products_filter_row {
+  margin-bottom: 35px;
+}
+
+.products_filter_row h3 {
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.products_filter_types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.type_btn {
+  background: #111;
+  border: 1px solid #222;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.type_btn.active {
+  background: #d4ff4d;
+  color: #000;
+  border-color: #d4ff4d;
+  font-weight: 700;
+}
+
+.products_filter_colors {
+  display: flex;
+  gap: 12px;
+}
+
+.color_swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.color_swatch.active {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #000, 0 0 0 4px #fff;
+}
+
+.price_labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.reset_btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* --- 3. Main Content & Independent Scrollbar --- */
+.products_right {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.header_top_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.section_title {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0px;
+}
+
+.search_container {
+  display: flex;
+  border: 1px solid #d4ff4d;
+  background-color: rgba(212, 255, 77, 0.05);
+  border-radius: 30px;
+  padding: 3px 15px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.search_input {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* THE GRID WITH SCROLLBAR */
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-height: 80vh;
+  /* Independent Height */
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+/* Custom Scrollbar for Grid */
+.products_grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.products_grid::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+
+.products_grid::-webkit-scrollbar-thumb {
+  background: #d4ff4d;
+  border-radius: 10px;
+}
+
+/* --- 4. Responsive Media Queries --- */
+.filter_burger_btn {
+  display: none;
+  background: #111;
+  border: 1px solid #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.burger_icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  margin: 3px 0;
+}
+
+.close_filter {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .products_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .filter_burger_btn {
+    display: flex;
+  }
+
+  .products_left {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    height: 100%;
+    background: #000;
+    z-index: 1000;
+    padding: 60px 20px;
+    transition: left 0.3s ease;
+    border-right: 1px solid #222;
+    overflow-y: auto;
+  }
+
+  .products_left.open {
+    left: 0;
+    height: 100vh;
+  }
+
+  .close_filter {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .products {
+    flex-direction: column;
+  }
+
+  .products_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: none;
+    /* Disable scroll-box on mobile for better UX */
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .products_grid {
+    grid-template-columns: 1fr;
+  }
+}

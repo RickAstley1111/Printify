@@ -1,0 +1,147 @@
+.services-section {
+  background: #000;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.services-header {
+  width: 100%;
+  padding: 24px 0;
+}
+
+.services-header_inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.services-header_title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 38px;
+  margin: 0;
+}
+
+.services-list {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.service-item {
+  border-bottom: 1px solid #282828;
+}
+
+.service-item_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 32px 0;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.service-item_left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  min-width: 0;
+}
+
+.service-item_img {
+  width: 150px;
+  height: 40px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.service-item_title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.plus-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.plus-icon img {
+  transition: transform 0.3s ease;
+}
+
+.plus-icon--open img {
+  transform: rotate(45deg);
+}
+
+.service-item_body {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.service-item_body--open {
+  max-height: 300px;
+}
+
+.service-item_desc {
+  color: #9d9fa1;
+  font-size: 18px;
+  line-height: 1.7;
+  padding-bottom: 32px;
+  padding-right: 56px;
+  max-width: 768px;
+  margin: 0;
+}
+
+
+@media (max-width: 1080px) {
+    .service-item_title{
+        font-size: 23px;
+    }
+
+    .service-item_img{
+        width: 120px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .service-item_title{
+        font-size: 16px;
+    }
+    .service-item_img{
+        width: 80px;
+        height: 20px;
+    }
+    .service-item_desc{
+        font-size: 10px;
+    }
+
+    .service-item_left{
+        gap: 10px;
+    }
+
+    .service-item_btn{
+        gap: 10px;
+    }
+}
+
+
+@media (max-width:460px) {
+    
+}

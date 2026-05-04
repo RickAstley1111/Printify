@@ -1,0 +1,308 @@
+.hero {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== STRIPES (Background) ===== */
+.stripes {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    z-index: 1;
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 15%,
+            black 85%,
+            transparent 100%);
+}
+
+.stripe {
+    width: 130px;
+    height: 600px;
+    border-radius: 50px;
+
+    background: url("../../assets/image5.png") center/cover no-repeat;
+    filter: blur(10px) brightness(0.5) contrast(1);
+
+    position: relative;
+    overflow: hidden;
+
+    /* --- Animation Logic --- */
+    opacity: 0;
+    animation: stripeFadeIn 0.8s ease-out forwards;
+}
+
+.stripe::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.02));
+
+    backdrop-filter: blur(10px);
+}
+
+/* ===== TITLE ===== */
+.title {
+    position: relative;
+    z-index: 2;
+    font-size: 110px;
+    color: white;
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.title span {
+    color: #b6ff3b;
+}
+
+/* ===== GLASS PANEL ===== */
+.glass-panel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+
+    margin-top: 30px;
+}
+
+.glass-panel-inner {
+    width: 90%;
+    max-width: 900px;
+
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(114, 114, 114, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow: 0 0 2px white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== CONTENT ===== */
+.glass-panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glass-panel-content p {
+    margin: 0 0 40px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+}
+
+/* ===== BUTTONS ===== */
+.panel-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.panel-buttons button {
+    padding: 15px;
+    width: 205px;
+    font-size: 20px;
+    font-weight: 600;
+
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.primary {
+    background-color: #b6ff3b;
+    color: black;
+}
+
+.secondary {
+    background-color: transparent;
+    color: #b6ff3b;
+    box-shadow: 0 0 1px white;
+}
+
+.panel-buttons button:hover {
+    box-shadow: 0 0 5px 5px rgb(0, 255, 38);
+}
+
+/* ===== STRIPE POSITIONS & ANIMATION DELAY ===== */
+.stripe:nth-child(1) {
+    background-position: 0% center;
+    animation-delay: 0.1s;
+}
+
+.stripe:nth-child(2) {
+    background-position: 10% center;
+    animation-delay: 0.2s;
+}
+
+.stripe:nth-child(3) {
+    background-position: 20% center;
+    animation-delay: 0.3s;
+}
+
+.stripe:nth-child(4) {
+    background-position: 30% center;
+    animation-delay: 0.4s;
+}
+
+.stripe:nth-child(5) {
+    background-position: 40% center;
+    animation-delay: 0.5s;
+}
+
+.stripe:nth-child(6) {
+    background-position: 50% center;
+    animation-delay: 0.6s;
+}
+
+.stripe:nth-child(7) {
+    background-position: 60% center;
+    animation-delay: 0.7s;
+}
+
+.stripe:nth-child(8) {
+    background-position: 70% center;
+    animation-delay: 0.8s;
+}
+
+.stripe:nth-child(9) {
+    background-position: 80% center;
+    animation-delay: 0.9s;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes stripeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1324px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .stripe {
+        width: 90px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 50px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .hero{
+        padding-top: 20px;
+    }
+
+    .stripe {
+        width: 70px;
+        height: 420px;
+        filter: blur(8px) brightness(0.6);
+    }
+
+    .stripes {
+        gap: 15px;
+    }
+
+    .glass-panel-inner {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .glass-panel-content p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .panel-buttons button {
+        width: 160px;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .stripe {
+        width: 50px;
+        height: 320px;
+        border-radius: 30px;
+    }
+
+    .stripes {
+        gap: 10px;
+    }
+
+    .glass-panel-inner {
+        padding: 18px;
+    }
+
+    .glass-panel-content p {
+        font-size: 16px;
+    }
+
+    .panel-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero{
+        padding-top: 10px;
+    }
+
+    .panel-buttons button {
+        width: 100%;
+        font-size: 15px;
+        padding: 5PX;
+    }
+}

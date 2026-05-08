@@ -55,6 +55,7 @@
 
 .cta-section_btn {
     margin-top: 16px;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     gap: 8px;
@@ -72,6 +73,52 @@
 
 .cta-section_btn:hover {
     background: #e5e5e5;
+=======
+    display: inline-flex;
+    /* Use inline-flex to fit content properly */
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    /* Added padding for a better shape */
+    background: #ffffff;
+    color: #282828;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.2px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Soft border for definition */
+    cursor: pointer;
+
+    /* Modern shadow and transition */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    user-select: none;
+}
+
+/* --- HOVER STATE --- */
+.cta-section_btn:hover {
+    background: #f9f9f9;
+    transform: translateY(-2px);
+    /* Slight lift */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- ACTIVE (CLICK) STATE --- */
+.cta-section_btn:active {
+    transform: translateY(0px) scale(0.96);
+    /* "Pressed" effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    background: #f0f0f0;
+}
+
+/* --- FOCUS STATE (Accessibility) --- */
+.cta-section_btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(186, 255, 25, 0.5);
+    /* Using your lime highlight color for the ring */
+>>>>>>> 93dbea5 (Updated project files)
 }
 
 @media (max-width: 1024px) {
@@ -88,4 +135,8 @@
         font-size: 48px;
         letter-spacing: -2px;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 93dbea5 (Updated project files)

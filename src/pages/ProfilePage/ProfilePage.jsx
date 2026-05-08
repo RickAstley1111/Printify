@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 93dbea5 (Updated project files)
 import './ProfilePage.css';
 import abr from '../../assets/Abror.png';
 import Header from '../../components/Header/Header';
@@ -8,14 +12,22 @@ import { Modal } from '@mui/material';
 
 const ProfilePage = () => {
   const [open, setOpen] = useState(false);
+<<<<<<< HEAD
   
   // --- INITIAL STATE ---
+=======
+
+>>>>>>> 93dbea5 (Updated project files)
   const initialFormState = {
     text: "",
     description: "",
     product_type: "",
     price: 0,
+<<<<<<< HEAD
     plastic_type: [], // Multi-select array
+=======
+    plastic_type: [],
+>>>>>>> 93dbea5 (Updated project files)
     rating: 0,
     colors: [],
     images: [],
@@ -24,14 +36,20 @@ const ProfilePage = () => {
 
   const [productData, setProductData] = useState(initialFormState);
   const [imagePreviews, setImagePreviews] = useState([]);
+<<<<<<< HEAD
   const [products, setProducts] = useState([]); 
 
   // --- OPTIONS ---
+=======
+  const [products, setProducts] = useState([]);
+
+>>>>>>> 93dbea5 (Updated project files)
   const colorOptions = ['green', 'yellow', 'blue', 'cyan', 'red', 'purple'];
   const sizeOptions = ['20x20x20cm', '10x10x10cm', '15x10x30cm'];
   const typeOptions = ['3d printed', '3d model', 'custom 3d print', 'custom 3d model'];
   const plasticOptions = ['PLA', 'TPU', 'ABS', 'PETG', 'Nylon', 'Carbon Fiber'];
 
+<<<<<<< HEAD
   // Prevent body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : 'auto';
@@ -44,6 +62,13 @@ const ProfilePage = () => {
     setProductData(prev => ({ 
       ...prev, 
       [name]: name === "price" ? (value === "" ? 0 : Number(value)) : value 
+=======
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProductData(prev => ({
+      ...prev,
+      [name]: name === "price" ? (value === "" ? 0 : Number(value)) : value
+>>>>>>> 93dbea5 (Updated project files)
     }));
   };
 
@@ -51,8 +76,13 @@ const ProfilePage = () => {
     setProductData(prev => ({
       ...prev,
       [key]: prev[key].includes(value)
+<<<<<<< HEAD
         ? prev[key].filter(i => i !== value) // Unselect
         : [...prev[key], value]              // Select
+=======
+        ? prev[key].filter(i => i !== value)
+        : [...prev[key], value]
+>>>>>>> 93dbea5 (Updated project files)
     }));
   };
 
@@ -67,24 +97,36 @@ const ProfilePage = () => {
 
   const removeImage = (index) => {
     setImagePreviews(prev => prev.filter((_, i) => i !== index));
+<<<<<<< HEAD
     setProductData(prev => ({ 
       ...prev, 
       images: prev.images.filter((_, i) => i !== index) 
+=======
+    setProductData(prev => ({
+      ...prev,
+      images: prev.images.filter((_, i) => i !== index)
+>>>>>>> 93dbea5 (Updated project files)
     }));
   };
 
   const sendData = async (data) => {
     try {
       const res = await axios.post("http://localhost:5050/api/products", data);
+<<<<<<< HEAD
       console.log("Response:", res.data);
     } catch (err) {
       console.error("Upload Error:", err.response?.data || err.message);
+=======
+    } catch (err) {
+      console.error(err);
+>>>>>>> 93dbea5 (Updated project files)
     }
   };
 
   const handleSaveProduct = (e) => {
     e.preventDefault();
 
+<<<<<<< HEAD
     // Formatting payload for backend
     const finalObject = {
       ...productData,
@@ -96,6 +138,16 @@ const ProfilePage = () => {
     sendData(finalObject);
 
     // Reset everything
+=======
+    const finalObject = {
+      ...productData,
+      rating: String(productData.rating),
+      product_type: productData.product_type.toString()
+    };
+
+    sendData(finalObject);
+
+>>>>>>> 93dbea5 (Updated project files)
     setOpen(false);
     setProductData(initialFormState);
     setImagePreviews([]);
@@ -106,16 +158,22 @@ const ProfilePage = () => {
     imagePreviews.forEach(url => URL.revokeObjectURL(url));
   };
 
+<<<<<<< HEAD
   console.log(productData);
   
 
+=======
+>>>>>>> 93dbea5 (Updated project files)
   return (
     <div className='fullpage'>
       <div className="container"><Header /></div>
       <div className="container">
         <div className="profile-dashboard">
 
+<<<<<<< HEAD
           {/* SETTINGS SECTION */}
+=======
+>>>>>>> 93dbea5 (Updated project files)
           <section className="settings-section">
             <h2 className="section-title">PROFILE <span className="text-lime">SETTINGS</span></h2>
             <div className="settings-grid">
@@ -133,14 +191,23 @@ const ProfilePage = () => {
                       <input type="text" placeholder="First name" />
                     </div>
                     <div className="input-group">
+<<<<<<< HEAD
                       <label>Last Name</label>
+=======
+                      <label className='label-two'>Last Name</label>
+>>>>>>> 93dbea5 (Updated project files)
                       <input type="text" placeholder="Last Name" />
                     </div>
                   </div>
                   <div className="bio-col">
                     <div className="input-group stretch-height">
+<<<<<<< HEAD
                       <label>Bio</label>
                       <textarea className="bio-textarea" placeholder="Describe your studio..."></textarea>
+=======
+                      <label className='label-two'>Bio</label>
+                      <textarea className="bio-textarea large-textarea" placeholder="Describe your studio..."></textarea>
+>>>>>>> 93dbea5 (Updated project files)
                     </div>
                   </div>
                 </div>
@@ -156,7 +223,10 @@ const ProfilePage = () => {
             </div>
           </section>
 
+<<<<<<< HEAD
           {/* PRODUCTS GRID */}
+=======
+>>>>>>> 93dbea5 (Updated project files)
           <section className="products-section">
             <h2 className="section-title center">MY <span className="text-lime">PRODUCTS</span></h2>
             <div className="product-grid">
@@ -183,7 +253,11 @@ const ProfilePage = () => {
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
               )) : <p style={{color: '#888', textAlign: 'center', width: '100%'}}>No products found.</p>}
+=======
+              )) : <p className="no-products">No products found.</p>}
+>>>>>>> 93dbea5 (Updated project files)
             </div>
           </section>
 
@@ -193,7 +267,11 @@ const ProfilePage = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
       <Modal open={open} onClose={handleClose}>
+=======
+      <Modal open={open} onClose={handleClose} className="mui-modal-wrapper">
+>>>>>>> 93dbea5 (Updated project files)
         <div className='modal-container'>
           <div className="modal-content">
             <div className="modal-top">
@@ -241,7 +319,10 @@ const ProfilePage = () => {
                 </div>
               </div>
 
+<<<<<<< HEAD
               {/* PLASTIC TYPE SELECTION */}
+=======
+>>>>>>> 93dbea5 (Updated project files)
               <div className="m-field">
                 <label>Plastic Types</label>
                 <div className="options-flex">
@@ -294,4 +375,8 @@ const ProfilePage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default ProfilePage; 
+=======
+export default ProfilePage;
+>>>>>>> 93dbea5 (Updated project files)

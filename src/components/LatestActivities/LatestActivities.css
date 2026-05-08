@@ -2,6 +2,10 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+<<<<<<< HEAD
+=======
+    box-sizing: border-box;
+>>>>>>> 93dbea5 (Updated project files)
 }
 
 .activities-section_title {
@@ -27,10 +31,19 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     gap: 14px;
 }
 
 /* ── ROW ── */
+=======
+    gap: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+>>>>>>> 93dbea5 (Updated project files)
 .activity-row {
     display: flex;
     align-items: center;
@@ -38,8 +51,15 @@
     background: #000;
     border: 2px solid #baff19;
     border-radius: 20px;
+<<<<<<< HEAD
     padding: 20px;
     min-height: 100px;
+=======
+    padding: 15px;
+    min-height: 100px;
+    box-sizing: border-box;
+    width: 100%;
+>>>>>>> 93dbea5 (Updated project files)
 }
 
 .activity-row_left {
@@ -74,6 +94,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+<<<<<<< HEAD
+=======
+    flex-wrap: wrap;
+>>>>>>> 93dbea5 (Updated project files)
 }
 
 .activity-row_name {
@@ -107,12 +131,26 @@
 .activity-row_right {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 8px;
     flex-shrink: 0;
     min-width: 220px;
     justify-content: flex-end;
 }
 
+=======
+    gap: 20px;
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+.activity-status-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+>>>>>>> 93dbea5 (Updated project files)
 .activity-row_price {
     font-family: 'Anonymous Pro', monospace;
     font-weight: 700;
@@ -120,8 +158,11 @@
     color: #fff;
     line-height: 1;
     margin: 0;
+<<<<<<< HEAD
     min-width: 90px;
     text-align: right;
+=======
+>>>>>>> 93dbea5 (Updated project files)
 }
 
 .activity-row_status {
@@ -129,6 +170,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 1;
+<<<<<<< HEAD
     white-space: nowrap;
     margin: 0;
     min-width: 100px;
@@ -140,12 +182,23 @@
 
     .activities-section_box {
         padding: 24px 16px;
+=======
+    margin: 0;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 640px) {
+    .activities-section_box {
+        padding: 20px 15px;
+        gap: 20px;
+>>>>>>> 93dbea5 (Updated project files)
     }
 
     .activities-section_title {
         font-size: 28px;
     }
 
+<<<<<<< HEAD
     .activity-row_price {
         font-size: 18px;
     }
@@ -155,3 +208,45 @@
         font-size: 16px;
     }
 }
+=======
+    .activity-row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .activity-row_left {
+        gap: 15px;
+    }
+
+    .activity-row_icon-box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .activity-row_icon-box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Distribute price and status evenly on the bottom row */
+    .activity-row_right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .activity-row_price {
+        font-size: 20px;
+    }
+
+    .activity-row_status {
+        font-size: 16px;
+    }
+
+    .activity-row_name {
+        font-size: 18px;
+    }
+}
+>>>>>>> 93dbea5 (Updated project files)

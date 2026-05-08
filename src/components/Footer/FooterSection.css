@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     .footer-section {
         background: #000;
         width: 100%;
@@ -179,3 +180,136 @@
             border-bottom: 2px solid #282828;
         }
     }
+=======
+.footer-section {
+    background: #000;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.footer-section_inner {
+    border: 2px solid #282828;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+}
+
+.footer-logo_cell,
+.footer-nav_cell,
+.footer-email_cell,
+.footer-services_cell,
+.footer-social_cell,
+.footer-copy_cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    flex: 1;
+}
+
+.footer-logo_cell,
+.footer-nav_cell,
+.footer-services_cell,
+.footer-social_cell {
+    border-right: 2px solid #282828;
+}
+
+.footer-nav_cell nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.footer-nav_cell a,
+.footer-services_cell a {
+    color: #bdbdbd;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-nav_cell a:hover,
+.footer-services_cell a:hover,
+.footer-email_cell a:hover {
+    color: #fff;
+}
+
+.footer-email_cell a {
+    color: #bdbdbd;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.footer-divider {
+    border-top: 2px solid #282828;
+}
+
+.footer-services_cell {
+    gap: 8px;
+}
+
+.footer-social_cell {
+    gap: 16px;
+}
+
+.footer-social_btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #282828;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.footer-social_btn:hover {
+    background: #333;
+}
+
+.footer-copy_cell p {
+    color: #bdbdbd;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .footer-logo_cell,
+    .footer-nav_cell,
+    .footer-services_cell,
+    .footer-social_cell {
+        border-right: none;
+        border-bottom: 2px solid #282828;
+        padding: 30px 0;
+    }
+
+    .footer-email_cell a {
+        font-size: 20px;
+    }
+}
+>>>>>>> 93dbea5 (Updated project files)

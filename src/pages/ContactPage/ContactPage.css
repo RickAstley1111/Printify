@@ -38,7 +38,10 @@
     gap: 80px;
 }
 
+<<<<<<< HEAD
 /* Info Side */
+=======
+>>>>>>> 93dbea5 (Updated project files)
 .info_block {
     margin-bottom: 40px;
 }
@@ -72,7 +75,10 @@
     color: #BAFF19;
 }
 
+<<<<<<< HEAD
 /* Form Side */
+=======
+>>>>>>> 93dbea5 (Updated project files)
 .contact_form {
     display: flex;
     flex-direction: column;
@@ -91,7 +97,11 @@
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 .input_group input, 
+=======
+.input_group input,
+>>>>>>> 93dbea5 (Updated project files)
 .input_group textarea {
     background: #0a0a0a;
     border: 1px solid #1a1a1a;
@@ -103,13 +113,50 @@
     transition: all 0.3s ease;
 }
 
+<<<<<<< HEAD
 .input_group input:focus, 
+=======
+.input_group input:focus,
+>>>>>>> 93dbea5 (Updated project files)
 .input_group textarea:focus {
     outline: none;
     border-color: #BAFF19;
     box-shadow: 0 0 15px rgba(186, 255, 25, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+.input_group input.error_input,
+.input_group textarea.error_input {
+    border-color: #ff4444;
+}
+
+.input_group input.error_input:focus,
+.input_group textarea.error_input:focus {
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.1);
+}
+
+.error_message {
+    color: #ff4444;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 2px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+>>>>>>> 93dbea5 (Updated project files)
 .submit_btn {
     background: #BAFF19;
     color: #000;
@@ -130,14 +177,21 @@
     background: #fff;
 }
 
+<<<<<<< HEAD
 /* Reveal Animation */
+=======
+>>>>>>> 93dbea5 (Updated project files)
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+<<<<<<< HEAD
 .contactCont{
+=======
+.contactCont {
+>>>>>>> 93dbea5 (Updated project files)
     padding-top: 20px;
 }
 
@@ -146,15 +200,26 @@
     transform: translateY(0);
 }
 
+<<<<<<< HEAD
 /* Responsive */
+=======
+>>>>>>> 93dbea5 (Updated project files)
 @media (max-width: 900px) {
     .contact_content {
         grid-template-columns: 1fr;
         gap: 50px;
     }
+<<<<<<< HEAD
     
     .contact_header h1 {
         font-size: 40px;
     }
 }
 
+=======
+
+    .contact_header h1 {
+        font-size: 40px;
+    }
+}
+>>>>>>> 93dbea5 (Updated project files)

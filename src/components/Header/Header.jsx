@@ -20,7 +20,7 @@ export default function Header() {
             {createPortal(
                 <div className={`header_sidebar ${isOpen ? "open" : ""}`}>
                     <button className="BurgerCancel" onClick={() => setIsOpen(false)}>
-                        Close
+                        {t.close}
                     </button>
                     <div className="BurgerLinkList">
                         <NavLink to="/" className="burger_menu_link" onClick={() => setIsOpen(false)}>
@@ -85,17 +85,17 @@ export default function Header() {
                 {/* Bottom Row */}
                 <div className="header-bottom">
                     <div className="header-bottom_services">
-                        <div className="header-bottom_services-box">
+                        <a href="/#services" className="header-bottom_services-box">
                             <img className="header-bottom_services-img" src={pencil} alt="" />
                             <p className="header-bottom_services-text">{t.services}</p>
-                        </div>
+                        </a>
                     </div>
 
                     <div className="header-bottom_touch">
-                        <div className="header-bottom_touch-box">
+                        <NavLink to="/contacts" className="header-bottom_touch-box">
                             <img className="header-bottom_touch-img" src={calendar} alt="" />
                             <p className="header-bottom_touch-text">{t.getInTouch}</p>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
             </header>

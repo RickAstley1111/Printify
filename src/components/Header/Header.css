@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-
-.header_burger_menu_closed{
-    position: absolute;
-    overflow: hidden;
-}
-.header_burger_menu_open{
-    position: absolute;
-}
-
-=======
->>>>>>> 93dbea5 (Updated project files)
 .header-wrapper {
     margin-top: 20px;
     display: grid;
@@ -24,18 +12,8 @@
     overflow: hidden;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-<<<<<<< HEAD
-}
-
-.header-logo_box_res{
-=======
     position: relative;
     z-index: 100;
-}
-
-.header-logo_box_res {
->>>>>>> 93dbea5 (Updated project files)
-    display: none;
 }
 
 .header-logo_box {
@@ -57,6 +35,10 @@
     display: grid;
     grid-template-columns: 1fr 52px 90px;
     border-bottom: 1px solid #2c2c2c;
+}
+
+.header-logo_box_res {
+    display: none;
 }
 
 .header-top_buttons {
@@ -82,18 +64,14 @@
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    transition: color 0.3s ease, background 0.3s ease;
     white-space: nowrap;
 }
 
 .header-top_buttons-item:hover {
-    color: #fff;
+    color: #baff19;
 }
 
-<<<<<<< HEAD
-/* ── BURGER ── */
-=======
->>>>>>> 93dbea5 (Updated project files)
 .header-top_burger-box {
     border-left: 1px solid #2c2c2c;
     display: flex;
@@ -118,57 +96,50 @@
     filter: brightness(1);
 }
 
-<<<<<<< HEAD
-/* ── LANG ── */
-=======
->>>>>>> 93dbea5 (Updated project files)
 .header-top_lang {
     border-left: 1px solid #2c2c2c;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 14px;
+    padding: 0 10px;
 }
 
 .header-top_lang-select {
-    background: transparent;
-    border: none;
-    color: #b0b0b0;
-    font-size: 13px;
+    background: #111;
+    border: 1px solid #2c2c2c;
+    color: #d4d4d4;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     font-family: inherit;
     cursor: pointer;
     outline: none;
     appearance: none;
     -webkit-appearance: none;
-    padding-right: 14px;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23b0b0b0' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    border-radius: 8px;
+    padding: 6px 26px 6px 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23baff19' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0px center;
+    background-position: right 9px center;
+    transition: all 0.25s ease;
 }
 
-.header-top_lang-select:hover {
+.header-top_lang-select:hover,
+.header-top_lang-select:focus {
+    color: #baff19;
+    border-color: rgba(186, 255, 25, 0.5);
+    box-shadow: 0 0 12px rgba(186, 255, 25, 0.15);
+}
+
+.header-top_lang-select option {
+    background: #111;
     color: #fff;
 }
 
-<<<<<<< HEAD
-.header-top_lang-option {
-    background: #1a1a1a;
-    color: #fff;
-}
-
-/* ── BOTTOM ROW ── */
-=======
->>>>>>> 93dbea5 (Updated project files)
 .header-bottom {
     grid-area: bottom;
     display: grid;
     grid-template-columns: 2fr 3fr;
-}
-
-.header-bottom_services,
-.header-bottom_touch {
-    display: flex;
-    align-items: center;
 }
 
 .header-bottom_services {
@@ -197,7 +168,6 @@
 .header-bottom_touch-img {
     width: 14px;
     height: 14px;
-    object-fit: contain;
     opacity: 0.6;
 }
 
@@ -206,19 +176,15 @@
     margin: 0;
     color: #b0b0b0;
     font-size: 13.5px;
+    transition: color 0.3s ease;
 }
 
-.header-bottom_touch-box {
-    justify-content: center;
+.header-bottom_services-box:hover .header-bottom_services-text,
+.header-bottom_touch-box:hover .header-bottom_touch-text {
+    color: #baff19;
 }
 
-<<<<<<< HEAD
-.header_burger_menu_closed , .header_burger_menu_open{
-display: none;
-    }
-
-/* basic header */
-=======
+/* ── FUTURISTIC SIDEBAR ── */
 .header_sidebar {
     position: fixed;
     top: 0;
@@ -306,68 +272,11 @@ display: none;
     transform: scaleY(1);
 }
 
->>>>>>> 93dbea5 (Updated project files)
-@media (max-width: 900px) {
-    .header-top_buttons-list {
-        gap: 20px;
-    }
-
-    .header-top_buttons {
-        padding: 0 12px;
-    }
-}
-
-@media (max-width: 766px) {
-<<<<<<< HEAD
-
-    /* ❗ НЕ ЛОМАЕМ GRID */
-
-
-=======
->>>>>>> 93dbea5 (Updated project files)
-    .header-top {
-        grid-template-columns: 1fr 52px 70px;
-    }
-
-    .header-wrapper {
-        grid-template-columns: 1fr 4fr;
-    }
-}
-
-@media (max-width: 680px) {
-<<<<<<< HEAD
-    .header-top_buttons-item{
-        font-size: 11px;
-    }
-=======
-    .header-top_buttons-item {
-        font-size: 11px;
-    }
-
->>>>>>> 93dbea5 (Updated project files)
-    .header-top_buttons-list {
-        gap: 10px;
-    }
-}
-
-<<<<<<< HEAD
-    
-
+/* ── RESPONSIVE ── */
 @media (max-width: 590px) {
-    
-    .header-top_buttons{
-        display: none;
-    }
 
-    .header-logo_box{
-=======
-@media (max-width: 590px) {
-    .header-top_buttons {
-        display: none;
-    }
-
+    .header-top_buttons,
     .header-logo_box {
->>>>>>> 93dbea5 (Updated project files)
         display: none;
     }
 
@@ -375,90 +284,28 @@ display: none;
         grid-template-columns: 0 4fr;
     }
 
-<<<<<<< HEAD
-    .header-logo_box_res{
-=======
     .header-logo_box_res {
->>>>>>> 93dbea5 (Updated project files)
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-<<<<<<< HEAD
-    .header-logo_box_res span{
-        color: white;
-    }
-
-    .header_burger_menu_closed{
-        display: block;
-        top: 0px;
-        left: 0px;
-        height: 100vh;
-        width: 0px;
-        background-color: blac;
-        transition: 0.3s;
-        z-index: 4;
-    }
-    .header_burger_menu_open{
-        display: block;
-        position: absolute;
-        z-index: 10000;
-        background-color: rgb(0, 0, 0);
-        
-        height: 100vh;
-        width: 60vw;
-        top: 0px;
-        left: 0px;
-        transition: 0.3s;
-        box-shadow: 0px 20px 200px 50px rgb(0, 0, 0)    ;
-    }
-    .burger_menu_link{
-        color: white;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        background-color: #1a1a1a;
-        padding: 10px;
-        border-radius: 10px;
-    }
-    .BurgerLinkList{
-        display: flex;
-        flex-direction: column;
         gap: 10px;
-        padding: 10px;
-    }
-    .BurgerCancel{
-        border: none;
-        margin-top: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-        border-radius: 10px;
-        padding: 10px;
-        width: 90%;
-=======
-    .header-logo_box_res span {
         color: white;
-    }
-
-    .header-top_burger-box {
-        display: flex;
     }
 }
 
 @media (min-width: 591px) {
     .header_sidebar {
         display: none;
->>>>>>> 93dbea5 (Updated project files)
     }
 }
 
-.header-top_lang-select option {
-<<<<<<< HEAD
-  background-color: #1a1a1a;
-  color: #fff;
-=======
-    background-color: #1a1a1a;
-    color: #fff;
->>>>>>> 93dbea5 (Updated project files)
+/* Hide burger button strictly on desktop */
+@media (min-width: 769px) {
+    .header-top_burger-box {
+        display: none;
+    }
+
+    .header-top {
+        grid-template-columns: 1fr 90px;
+    }
 }

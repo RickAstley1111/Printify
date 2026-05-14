@@ -2,18 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/Header/Header";
+import { useLanguage } from "../../LanguageContext";
+import { translations } from "../../i18n";
 import "./ShopSinglePage.css";
 
 const ShopSinglePage = () => {
   const { id } = useParams();
+  const { lang } = useLanguage();
+  const t = translations[lang];
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState("");
-  
+
   // Interaction States
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
-  
+
   // Comment States
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
@@ -24,13 +28,13 @@ const ShopSinglePage = () => {
       try {
         const response = await axios.get(`http://localhost:5050/api/products/${id}`);
         const data = response.data;
-        
+
         setProduct(data);
         // Adaptation: use the first item in the images array
         if (data.images && data.images.length > 0) {
           setSelectedImage(data.images[0]);
         }
-        
+
         // Defaults based on new structure
         if (data.colors && data.colors.length > 0) setSelectedColor(data.colors[0]);
         if (data.sizes && data.sizes.length > 0) setSelectedSize(data.sizes[0]);
@@ -77,17 +81,17 @@ const ShopSinglePage = () => {
     setUserName("");
   };
 
-  if (loading) return <div className="loading_text">Yuklanmoqda...</div>;
-  if (!product) return <div className="loading_text">Mahsulot topilmadi</div>;
+  if (loading) return <div className="loading_text">{t.loading}</div>;
+  if (!product) return <div className="loading_text">{t.productNotFound}</div>;
 
   return (
     <div className="single_product_page">
       <div className="container"><Header /></div>
-      
+
       <main className="container">
         <div className="product_top_section">
           <h1 className="collection_title">
-          
+
           </h1>
 
           <div className="product_main_content">
@@ -98,8 +102,8 @@ const ShopSinglePage = () => {
               </div>
               <div className="thumbnail_list">
                 {product.images?.map((img, idx) => (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className={`thumb_item ${selectedImage === img ? "active" : ""}`}
                     onClick={() => setSelectedImage(img)}
                   >
@@ -113,16 +117,16 @@ const ShopSinglePage = () => {
             <div className="product_details_info">
               <div className="detail_header">
                 <h2>{product.text}</h2>
-                <span className="single_price">{product.price} sum</span>
+                <span className="single_price">{product.price} {t.sum}</span>
               </div>
-              <span className="highlight">{product.product_type}</span> 
+              <span className="highlight">{product.product_type}</span>
               <p className="single_description">{product.description}</p>
 
               <div className="options_group">
-                <h3>Colors</h3>
+                <h3>{t.colors}</h3>
                 <div className="color_options">
                   {product.colors?.map(color => (
-                    <span 
+                    <span
                       key={color}
                       className={`color_circle ${selectedColor === color ? 'active' : ''}`}
                       style={{ backgroundColor: color }}
@@ -133,10 +137,10 @@ const ShopSinglePage = () => {
               </div>
 
               <div className="options_group">
-                <h3>Size</h3>
+                <h3>{t.size}</h3>
                 <div className="size_options">
                   {product.sizes?.map(size => (
-                    <button 
+                    <button
                       key={size}
                       className={`size_btn ${selectedSize === size ? "active" : ""}`}
                       onClick={() => setSelectedSize(size)}
@@ -148,37 +152,37 @@ const ShopSinglePage = () => {
               </div>
 
               <button className="add_to_cart_main" onClick={handleAddToCart}>
-                Add to card +
+                {t.addToCard}
               </button>
             </div>
           </div>
         </div>
 
         <section className="comments_section">
-          <h2 className="comments_title">Comments ({comments.length})</h2>
-          
+          <h2 className="comments_title">{t.comments} ({comments.length})</h2>
+
           <form className="comment_form" onSubmit={handlePostComment}>
-            <input 
-              type="text" 
-              placeholder="Your Name" 
+            <input
+              type="text"
+              placeholder={t.yourName}
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required
             />
-            <textarea 
-              placeholder="Share your thoughts..." 
+            <textarea
+              placeholder={t.shareThoughts}
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               required
             ></textarea>
-            <button type="submit" className="post_btn">Post Comment</button>
+            <button type="submit" className="post_btn">{t.postComment}</button>
           </form>
 
           <div className="comments_grid">
             {comments.map((c, idx) => (
               <div key={idx} className="comment_card">
                 <h4>{c.name}</h4>
-                <div className="stars">{"★".repeat(c.rating)}{"☆".repeat(5-c.rating)}</div>
+                <div className="stars">{"★".repeat(c.rating)}{"☆".repeat(5 - c.rating)}</div>
                 <p>{c.text}</p>
               </div>
             ))}

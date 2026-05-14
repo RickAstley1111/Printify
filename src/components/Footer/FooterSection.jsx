@@ -1,8 +1,4 @@
 import "./FooterSection.css";
-<<<<<<< HEAD
-
-=======
->>>>>>> 93dbea5 (Updated project files)
 import { useLanguage } from "../../LanguageContext";
 import { translations } from "../../i18n";
 
@@ -79,10 +75,6 @@ export default function FooterSection() {
                 <div className="footer-divider" />
 
                 <div className="footer-bottom">
-<<<<<<< HEAD
-
-=======
->>>>>>> 93dbea5 (Updated project files)
                     <div className="footer-services_cell">
                         <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                             <path d="..." fill="#D0D5DD" />
@@ -101,18 +93,9 @@ export default function FooterSection() {
                     <div className="footer-copy_cell">
                         <p>© 2026 Odinas Design</p>
                     </div>
-<<<<<<< HEAD
-
-                </div>
-            </div>
-        </footer>
-    );
-}
-=======
                 </div>
 
             </div>
         </footer>
     );
 }
->>>>>>> 93dbea5 (Updated project files)

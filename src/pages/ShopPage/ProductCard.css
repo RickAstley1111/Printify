@@ -1,25 +1,29 @@
 .compact_card {
   width: 100%;
   max-width: 280px;
-  background: #000;
+  background: #060606;
   border-radius: 16px;
   color: #fff;
   cursor: pointer;
-  border: 1px solid #222;
+  border: 1px solid #1f1f1f;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease; /* Smooth transition for hover */
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.4s ease;
+  will-change: transform;
 }
 
-/* Hover Effect */
 .compact_card:hover {
-  transform: translateY(-8px); /* Card lifts up */
-  border-color: #C8FF5E; /* Border turns lime green */
-  box-shadow: 0 10px 20px rgba(200, 255, 94, 0.1);
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  border-color: rgba(186, 255, 25, 0.55);
+  box-shadow: 0 15px 35px rgba(186, 255, 25, 0.15),
+    0 30px 60px -20px rgba(0, 0, 0, 0.7);
 }
 
-/* Loading State */
 .loading_state {
   height: 350px;
   display: flex;
@@ -35,25 +39,32 @@
   letter-spacing: 1px;
 }
 
-/* Space between media and content */
 .card_body_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Adds gap between description and footer/price */
+  gap: 15px;
   padding-bottom: 14px;
 }
 
-/* Image Section */
 .card_media {
   position: relative;
   height: 180px;
-  margin-bottom: 10px; /* Small gap between image and text */
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .media_img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.4s ease;
+  will-change: transform;
+}
+
+.compact_card:hover .media_img {
+  transform: scale(1.07);
+  filter: brightness(1.05);
 }
 
 .type_badge_small {
@@ -66,6 +77,7 @@
   border-radius: 12px;
   font-size: 0.7rem;
   font-weight: 700;
+  z-index: 2;
 }
 
 .color_group {
@@ -74,6 +86,7 @@
   left: 12px;
   display: flex;
   gap: 4px;
+  z-index: 2;
 }
 
 .dot_mini {
@@ -83,12 +96,11 @@
   border: 2px solid #000;
 }
 
-/* Content Details */
 .card_content {
   padding: 10px 14px 0 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Internal gap between Title, Desc, and Tags */
+  gap: 8px;
 }
 
 .content_row {
@@ -100,6 +112,11 @@
 .title_small {
   margin: 0;
   font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.compact_card:hover .title_small {
+  color: #baff19;
 }
 
 .desc_small {
@@ -124,7 +141,6 @@
   color: #888;
 }
 
-/* Footer Section */
 .card_footer_small {
   padding: 0 14px;
   display: flex;
@@ -140,15 +156,11 @@
 
 .btn_add_small {
   background: #C8FF5E;
+  color: #000;
   border: none;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.7rem;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn_add_small:active {
-  opacity: 0.7;
 }

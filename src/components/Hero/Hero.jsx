@@ -10,30 +10,18 @@ const Hero = () => {
 
   return (
     <div className="hero">
-<<<<<<< HEAD
-      {/* BACKGROUND STRIPES WITH STAGGERED DELAY */}
-      <div className="stripes">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div 
-            key={i} 
-            className="stripe" 
-            style={{ animationDelay: `${i * 0.1}s` }} 
-=======
+      {/* Background Stripes with staggered animation delay */}
       <div className="stripes">
         {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}
             className="stripe"
             style={{ animationDelay: `${i * 0.1}s` }}
->>>>>>> 93dbea5 (Updated project files)
           />
         ))}
       </div>
 
-<<<<<<< HEAD
-      {/* MAIN TITLE */}
-=======
->>>>>>> 93dbea5 (Updated project files)
+      {/* Main Title Section */}
       <h1 className="title">
         {t.heroTitle1} <br />
         {t.heroTitle2}
@@ -41,10 +29,7 @@ const Hero = () => {
         <span>PRINTIFY</span>
       </h1>
 
-<<<<<<< HEAD
-      {/* GLASS PANEL CONTENT */}
-=======
->>>>>>> 93dbea5 (Updated project files)
+      {/* Glassmorphism Content Panel */}
       <div className="glass-panel">
         <div className="glass-panel-inner">
           <div className="glass-panel-content">
@@ -72,8 +57,4 @@ const Hero = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Hero;
-=======
-export default Hero;
->>>>>>> 93dbea5 (Updated project files)

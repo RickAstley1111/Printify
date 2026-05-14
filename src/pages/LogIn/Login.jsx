@@ -1,74 +1,48 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import './Login.css' // **Ensure you create this file**
+import { useLanguage } from '../../LanguageContext'
+import { translations } from '../../i18n'
+import './Login.css'
 
 const Login = () => {
-
   const navigate = useNavigate();
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
   return (
     <div className='login-page-container'>
       <button className="back-to-home" onClick={() => navigate("/")}>
-        ← Back to Home
+        {t.backHome}
       </button>
-      {/* This is a common design pattern. The entire screen is split in two. 
-        We use flexbox to align them side-by-side.
-      */}
 
-      {/* LEFT SIDE: The Form */}
       <div className="login-form-section">
         <div className="form-content-wrapper">
-
-          {/* Corrected header to match image */}
           <h1 className="main-title">
-            <span>LOGIN</span> PAGE
+            <span>{t.loginTitle}</span> {t.pageWord}
           </h1>
-          <p className="subtitle">Welcome back! Please enter your details.</p>
+          <p className="subtitle">{t.welcomeBack}</p>
 
           <form className="login-form">
-
-            {/* Input field 1: EMAIL */}
             <div className="input-field-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Enter your email" // Subtle UX improvement
-                required
-              />
+              <label htmlFor="email">{t.email}</label>
+              <input id="email" type="email" placeholder={t.enterEmail} required />
             </div>
 
-            {/* Input field 2: PASSWORD */}
             <div className="input-field-group">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                placeholder="••••••••" // Obscured placeholder
-                required
-              />
+              <label htmlFor="password">{t.password}</label>
+              <input id="password" type="password" placeholder="••••••••" required />
             </div>
 
-            {/* Lime Green Submit Button */}
-            <button type="submit" className="login-submit-button">Log in</button>
+            <button type="submit" className="login-submit-button">{t.logIn}</button>
 
-            {/* Link to Register Page */}
             <p className="register-redirect-text">
-              Don't have an account? <NavLink to={"/Register"}>Register</NavLink>
+              {t.noAccount} <NavLink to={"/Register"}>{t.register}</NavLink>
             </p>
-
           </form>
         </div>
       </div>
 
-      {/* RIGHT SIDE: The Image Background */}
-      <div className="login-image-section">
-        {/*
-          This section is kept empty in HTML. 
-          The blurry 3D printer image will be applied here using CSS `background-image`.
-        */}
-      </div>
-
+      <div className="login-image-section"></div>
     </div>
   )
 }

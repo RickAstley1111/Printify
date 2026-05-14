@@ -1,17 +1,10 @@
 import ServiceItem from "./ServicesItem";
 import bottomRightIcon from "../../assets/bottomR.png";
 import hero1 from "../../assets/hero-1.png";
-<<<<<<< HEAD
-import hero2 from "../../assets/hero-1.png";
-import hero3 from "../../assets/hero-1.png";
-import hero4 from "../../assets/hero-1.png";
-import hero5 from "../../assets/hero-1.png";
-=======
 import hero2 from "../../assets/hero-2.png";
 import hero3 from "../../assets/hero-3.png";
 import hero4 from "../../assets/hero-4.png";
 import hero5 from "../../assets/hero-5.png";
->>>>>>> 93dbea5 (Updated project files)
 import "./ServicesSection.css";
 
 import { useLanguage } from "../../LanguageContext";

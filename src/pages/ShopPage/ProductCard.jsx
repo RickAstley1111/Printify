@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../LanguageContext";
+import { translations } from "../../i18n";
 
 // PART 1: Media (Image & Badge)
 const CardMedia = ({ image, type, colors }) => (
@@ -34,36 +36,36 @@ const CardContent = ({ title, desc, sizes }) => (
 // MAIN COMPONENT
 const ProductCard = ({ product, isLoading }) => {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
-  // Loading Placeholder
   if (isLoading || !product) {
     return (
       <div className="compact_card loading_state">
-        <div className="loading_label">Loading product...</div>
+        <div className="loading_label">{t.loading}</div>
       </div>
     );
   }
 
   return (
     <div className="compact_card" onClick={() => navigate(`/product/${product.id}`)}>
-      <CardMedia 
-        image={product.images[0]} 
-        type={product.product_type} 
-        colors={product.colors} 
+      <CardMedia
+        image={product.images[0]}
+        type={product.product_type}
+        colors={product.colors}
       />
-      
-      {/* Wrapper to add vertical gap between sections */}
+
       <div className="card_body_wrapper">
-        <CardContent 
-          title={product.text} 
-          desc={product.description} 
-          sizes={product.sizes} 
+        <CardContent
+          title={product.text}
+          desc={product.description}
+          sizes={product.sizes}
         />
-        
+
         <div className="card_footer_small">
-          <span className="price_small">{product.price} sum</span>
+          <span className="price_small">{product.price} {t.sum}</span>
           <button className="btn_add_small" onClick={(e) => e.stopPropagation()}>
-            Add to card +
+            {t.addToCard}
           </button>
         </div>
       </div>

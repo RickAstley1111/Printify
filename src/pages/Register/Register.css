@@ -16,6 +16,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -45,7 +46,8 @@ body {
 
 .form-content-wrapper {
   width: 100%;
-  max-width: 460px; /* Slightly wider for the two-column rows */
+  max-width: 460px;
+  /* Slightly wider for the two-column rows */
   position: relative;
 }
 
@@ -63,7 +65,10 @@ body {
 .login-image-section::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(to right, #000, transparent);
 }
 
@@ -79,7 +84,8 @@ body {
 }
 
 .main-title span {
-  color: #cfff3d; /* Electric Lime */
+  color: #cfff3d;
+  /* Electric Lime */
 }
 
 .subtitle {
@@ -93,7 +99,8 @@ body {
    ========================================= */
 .form-row {
   display: flex;
-  gap: 15px; /* Gap between first/last name and password fields */
+  gap: 15px;
+  /* Gap between first/last name and password fields */
 }
 
 .input-field-group {
@@ -101,7 +108,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 1; /* Ensures side-by-side inputs take equal space */
+  flex: 1;
+  /* Ensures side-by-side inputs take equal space */
 }
 
 .input-field-group label {
@@ -112,7 +120,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-.input-field-group input, 
+.input-field-group input,
 .custom-select {
   background-color: #0d0d0d;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -204,6 +212,7 @@ body {
    6. RESPONSIVENESS (MOBILE)
    ========================================= */
 @media (max-width: 900px) {
+
   /* Hide the image section */
   .login-image-section {
     display: none;

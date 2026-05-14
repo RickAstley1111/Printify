@@ -13,17 +13,17 @@
 
 /* wrapper */
 .products_card {
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 24px;
     overflow: hidden;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     transition: 0.3s;
 }
 
 /* hover эффект */
 .products_card:hover {
     transform: translateY(-6px);
-    border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* image */
@@ -67,7 +67,7 @@
 }
 
 /* button */
-.products_list-item-content button { 
+.products_list-item-content button {
     background-color: #BAFF19;
     padding: 10px 18px;
     font-weight: 700;
@@ -77,7 +77,7 @@
     transition: 0.3s;
 }
 
-.products_list-item-content button:hover { 
+.products_list-item-content button:hover {
     background-color: #fff;
     cursor: pointer;
 }
@@ -111,14 +111,14 @@
 }
 
 
-.see_more_btn_out{
+.see_more_btn_out {
     display: flex;
     width: 100%;
     text-align: center;
     margin-top: 60px;
 }
 
-.see_more_btn_out button{
+.see_more_btn_out button {
     width: 100%;
     padding: 15px;
     border-radius: 20px;
@@ -129,7 +129,7 @@
     background-color: transparent;
 }
 
-.see_more_btn_out button:hover{
+.see_more_btn_out button:hover {
     cursor: pointer;
     color: white;
     border: white solid 1px;

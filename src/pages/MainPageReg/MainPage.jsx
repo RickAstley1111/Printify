@@ -6,6 +6,7 @@ import Products from '../../components/Products/Products'
 import TeamSection from '../../components/OurTeam/TeamSection'
 import FooterSection from '../../components/Footer/FooterSection'
 import CTASection from '../../components/CTASection/CTASection'
+import RevealOnScroll from '../../components/RevealOnScroll'
 
 const MainPage = () => {
   return (
@@ -18,26 +19,35 @@ const MainPage = () => {
         <Hero />
       </div>
 
-      <div className='container'>
-        <ServicesSection />
+      <div className='container' id="services">
+        <RevealOnScroll>
+          <ServicesSection />
+        </RevealOnScroll>
       </div>
 
       <div className='container'>
-        <Products />
+        <RevealOnScroll delay={80}>
+          <Products />
+        </RevealOnScroll>
       </div>
 
       <div className='container'>
-        <TeamSection/>
+        <RevealOnScroll delay={120}>
+          <TeamSection />
+        </RevealOnScroll>
       </div>
 
       <div className='container'>
-        <CTASection/>
+        <RevealOnScroll>
+          <CTASection />
+        </RevealOnScroll>
       </div>
 
       <div className='container'>
-        <FooterSection/>
+        <RevealOnScroll>
+          <FooterSection />
+        </RevealOnScroll>
       </div>
-
     </div>
   )
 }

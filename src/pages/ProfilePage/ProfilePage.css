@@ -278,10 +278,95 @@
 }
 
 .btn-cancel {
-  border: 1px solid #333;
-  color: #fff;
+  background: transparent;
+  border: 1.5px solid #baff19;
+  color: #baff19;
   padding: 12px;
   border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.btn-cancel:hover {
+  background: rgba(186, 255, 25, 0.1);
+  box-shadow: 0 0 14px rgba(186, 255, 25, 0.25);
+}
+
+/* Modal top bar + close button */
+.modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-right: 4px;
+}
+
+.modal-top h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease, transform 0.35s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn-close:hover {
+  color: #baff19;
+  transform: rotate(90deg);
+  box-shadow: 0 0 14px rgba(186, 255, 25, 0.45);
+  background: rgba(186, 255, 25, 0.06);
+}
+
+.btn-close::after {
+  display: none;
+}
+
+/* Custom futuristic scrollbar inside modal */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: #baff19 #0a0a0a;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #baff19;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(186, 255, 25, 0.4);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #cfff5c;
+}
+
+/* Modal field focus glow */
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  outline: none;
+  border-color: #baff19 !important;
+  box-shadow: 0 0 8px rgba(186, 255, 25, 0.3);
 }
 
 .btn-save-final {

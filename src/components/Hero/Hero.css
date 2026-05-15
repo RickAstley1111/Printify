@@ -30,12 +30,66 @@
     width: 130px;
     height: 600px;
     border-radius: 50px;
-    background: url("../../assets/image5.png") center/cover no-repeat;
+    background-image: url("../../assets/image5.png");
+    background-repeat: no-repeat;
+    background-size: 1400px 600px;
+    background-position: center center;
     filter: blur(10px) brightness(0.5) contrast(1);
     position: relative;
     overflow: hidden;
     opacity: 0;
     animation: stripeFadeIn 0.8s ease-out forwards;
+}
+
+/* Distribute one continuous background across 8 stripes */
+.stripe:nth-child(1) {
+    background-position: 0% center;
+}
+
+.stripe:nth-child(2) {
+    background-position: 14.2857% center;
+}
+
+.stripe:nth-child(3) {
+    background-position: 28.5714% center;
+}
+
+.stripe:nth-child(4) {
+    background-position: 42.8571% center;
+}
+
+.stripe:nth-child(5) {
+    background-position: 57.1428% center;
+}
+
+.stripe:nth-child(6) {
+    background-position: 71.4285% center;
+}
+
+.stripe:nth-child(7) {
+    background-position: 85.7142% center;
+}
+
+.stripe:nth-child(8) {
+    background-position: 100% center;
+}
+
+@media (max-width: 1324px) {
+    .stripe {
+        background-size: 1000px 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stripe {
+        background-size: 720px 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stripe {
+        background-size: 520px 320px;
+    }
 }
 
 .stripe::after {
